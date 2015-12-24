@@ -1,0 +1,62 @@
+<?php
+/**
+ * 通用语言资源包
+ * FileName: common.php.
+ * Author: liupeng
+ * Date: 2015/8/20
+ */
+return [
+    //通用
+    'goback'=>'返回',
+    'name'=>'名称',
+    'link'=>'链接',
+    'description'=>'描述',
+    'status'=>'状态',
+    'icon'=>'图标(需手动加icon-前缀)',
+    'close'=>'关闭',
+    'save'=>'保存',
+    'reset'=>'重置',
+    'cancel'=>'取消',
+    'create'=>'添加',
+    'operation'=>'操作',
+    'update'=>'编辑',
+    'delete'=>'删除',
+    'search'=>'搜索',
+    'weight'=>'权重',
+    'deny'=>'您无权限进行该操作，请联系管理员！',
+    'success.insert'=>'添加成功',
+    'success.delete'=>'删除成功',
+    'success.update'=>'更新成功',
+    'error.load.data'=>'获取请求数据错误',
+    'error.insert'=>'添加失败',
+    'error.delete'=>'删除失败',
+    'error.update'=>'更新失败',
+    'error.file.upload'=>'文件上传错误',
+    'gridtable.norecords'=>'共有0条记录',
+    'gridtable.pages.title'=>'当前显示{start}至{end}条记录&nbsp;共有{total}条记录',
+    'login.title'=>'欢迎登录OPPO社区后台管理',
+    'login.failed'=>'登录失败',
+    'login.success'=>'登录成功',
+    'login.username'=>'用户名',
+    'login.password'=>'密码',
+    'login.submit'=>'登陆',
+    'login.rememberme'=>'记住我',
+    'status.ok'=>'有效',
+    'status.no'=>'无效',
+    'index'=>'仪表盘',
+    'footer.copyright'=>'&nbsp;©&nbsp;2005&nbsp;-&nbsp;2015&nbsp;xxx有限公司版权所有',
+    'name'=>'名称',
+    'address'=>'详细地址',
+    'note'=>'备注',
+    'contact'=>'联系人',
+    'email'=>'邮箱',
+    'mobile'=>'手机',
+    'phone'=>'电话',
+    'fax'=>'传真',
+    'qq'=>'腾讯QQ',
+    'user.username'=>'用户名',
+    'user.password'=>'密码',
+    'user.name'=>'姓名',
+    'type'=>'类型',
+    'rank'=>'排序'
+];

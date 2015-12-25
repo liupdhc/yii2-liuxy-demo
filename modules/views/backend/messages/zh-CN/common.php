@@ -34,7 +34,7 @@ return [
     'error.file.upload'=>'文件上传错误',
     'gridtable.norecords'=>'共有0条记录',
     'gridtable.pages.title'=>'当前显示{start}至{end}条记录&nbsp;共有{total}条记录',
-    'login.title'=>'欢迎登录OPPO社区后台管理',
+    'login.title'=>'欢迎登录后台管理',
     'login.failed'=>'登录失败',
     'login.success'=>'登录成功',
     'login.username'=>'用户名',

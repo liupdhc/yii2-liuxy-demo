@@ -24,7 +24,7 @@ return [
             'baseUrl' => '/backend'
         ],
         'view' => [
-            'theme' => 'modules\site\themes\backend\Theme'
+            'theme' => 'liuxy\admin\Theme'
         ],
         'errorHandler' => [
             'errorAction' => 'admin/default/error'

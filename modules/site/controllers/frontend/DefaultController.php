@@ -7,12 +7,12 @@
 
 namespace modules\site\controllers\frontend;
 
-use oshop\components\FrontendController;
+use modules\components\controllers\FrontendController;
 
 /**
  *
  * Class DefaultController
- * @package oshop\modules\site\controllers\frontend
+ * @package modules\site\controllers\frontend
  */
 class DefaultController extends FrontendController {
 

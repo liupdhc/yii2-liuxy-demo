@@ -7,10 +7,12 @@
 
 namespace modules\components\controllers;
 
-use modules\components\assets\BackendAssetBundle;
+use Yii;
+use liuxy\admin\components\Controller;
+use modules\components\assets\backend\PageScriptAsset;
 use yii\helpers\ArrayHelper;
 
-class BackendController extends \liuxy\admin\components\Controller {
+class BackendController extends Controller {
     /**
      * @inheritDoc
      */
@@ -22,7 +24,10 @@ class BackendController extends \liuxy\admin\components\Controller {
         if (!$this->request->getIsAjax()) {
             if ($this->module) {
                 $currentModuleId = $this->module->getUniqueId();
-                BackendAssetBundle::registerJsFile($this->getView(), $currentModuleId);
+                $file = Yii::getAlias('@webroot/static').'/scripts/pages/'.$currentModuleId.'.js';
+                if (file_exists($file)) {
+                    PageScriptAsset::registerJsFile($this->getView(), $currentModuleId);
+                }
             }
         }
         return parent::afterAction($action, $result);

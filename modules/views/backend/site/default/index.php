@@ -769,7 +769,7 @@ FlotAsset::register($this);
         <!-- End: life time stats -->
     </div>
 </div>
-<?php \modules\components\assets\BackendAssetBundle::registerJsFile($this,'index');?>
+<?php \modules\components\assets\backend\PageScriptAsset::registerJsFile($this,'index');?>
 <script type="text/javascript">
 
     _callbacks.push(function() {

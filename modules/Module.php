@@ -46,35 +46,22 @@ abstract class Module extends \yii\base\Module {
         if (static::$name === null) {
             throw new InvalidConfigException('The "name" property must be set.');
         }
-        if ($this->isBackend) {
-            $this->setViewPath(Yii::getAlias('@' . static::$author) . '/views/backend/' . static::$name);
-            if ($this->controllerNamespace === null) {
-                $this->controllerNamespace = str_replace('/','\\',static::$author) . '\\' . static::$name . '\\controllers\\backend';
-            }
-        } else if ($this->isApi) {
-            if ($this->controllerNamespace === null) {
-                $this->controllerNamespace = str_replace('/','\\',static::$author) . '\\' . static::$name . '\\controllers\\api';
-            }
-        } else if ($this->isConsole) {
-            if ($this->controllerNamespace === null) {
-                $this->controllerNamespace = str_replace('/','\\',static::$author) . '\\' . static::$name . '\\commands';
-            }
-        } else {
-            /**
-             * 前台需要兼容动态主题
-             */
-            if (is_object(Yii::$app->view->theme) && isset(Yii::$app->view->theme->template)) {
-                $this->setViewPath(Yii::getAlias('@' . static::$author)  . '/views/frontend/themes/'.Yii::$app->view->theme->template.'/'.static::$name);
-                $this->layout = '@' . static::$author.'/views/frontend/themes/'.Yii::$app->view->theme->template.'/layouts/main';
-            } else {
-                $this->setViewPath(Yii::getAlias('@' . static::$author)  . '/views/frontend/themes/default/'.static::$name);
-                $this->layout = '@' . static::$author.'/views/frontend/themes/default/layouts/main';
-            }
 
-            if ($this->controllerNamespace === null) {
-                $this->controllerNamespace = str_replace('/','\\',static::$author) . '\\' . static::$name . '\\controllers\\frontend';
-            }
+        $controllerNamespaceSuffix = "\\controllers" ;
+        if ($this->isBackend) {
+            $controllerNamespaceSuffix .=  '\\backend';
+            $this->setViewPath(Yii::getAlias('@' . static::$author) . '/views/backend/' . static::$name);
+        } else if ($this->isApi) {
+            $controllerNamespaceSuffix .= '\\api';
+        } else if ($this->isConsole) {
+            $controllerNamespaceSuffix = '\\commands';
+        } else {
+            $controllerNamespaceSuffix .= '\\frontend';
+            $this->setViewPath(str_replace('views','',$this->getViewPath()));
+            $this->layout = '@' . static::$author.'/views/frontend/themes/'.Yii::$app->view->theme->template.'/layouts/main';
         }
+        $this->controllerNamespace = str_replace('/','\\',static::$author) . '\\' . static::$name.$controllerNamespaceSuffix;
+
         // Add module I18N category.
         if (!isset(Yii::$app->i18n->translations[static::$author.'/'.static::$name]) && !isset(Yii::$app->i18n->translations[static::$author.'/*'])) {
             Yii::$app->i18n->translations[static::$author.'/'.static::$name] = [

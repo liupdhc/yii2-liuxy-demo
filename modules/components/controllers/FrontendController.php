@@ -6,13 +6,13 @@
  */
 
 namespace modules\components\controllers;
-use yii\liuxy\WebController;
+use liuxy\frontend\components\Controller;
 
 /**
  * FileName: BackendController.php.
  * Author: liupeng
  * Date: 2015/8/15
  */
-class FrontendController extends WebController {
+class FrontendController extends Controller {
 
 }

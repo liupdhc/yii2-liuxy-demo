@@ -1,7 +1,7 @@
 <?php
-$environment = (getenv('APP_ENV') != '' ? getenv('APP_ENV') : 'test');
+$environment = (getenv('APP_ENV') != '' ? getenv('APP_ENV') : 'dev');
 defined('YII_ENV') or define('YII_ENV', $environment);
-defined('YII_DEBUG') or define('YII_DEBUG', (YII_ENV == 'test'));
+defined('YII_DEBUG') or define('YII_DEBUG', (YII_ENV == 'dev'));
 
 define('WEB_ROOT', realpath(__DIR__ . '/') . DIRECTORY_SEPARATOR);
 /**

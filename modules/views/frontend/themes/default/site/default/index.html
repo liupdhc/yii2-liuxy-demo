@@ -730,3 +730,8 @@
 
 <!--{use class="modules\components\assets\frontend\PageScriptAsset"}-->
 <!--{PageScriptAsset::registerJsFile($this, 'layout.min')|void}-->
+<script type="text/javascript">
+    _callbacks.push(function() {
+        Layout.init();
+    });
+</script>

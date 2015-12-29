@@ -14,6 +14,13 @@
     <!--{$content}-->
     <!--{include '../layouts/footer.html'}-->
 <!--{$this->endBody()}-->
+<script type="text/javascript">
+    $(function() {
+        for(var i=0;i<_callbacks.length;i++){
+            _callbacks[i]();
+        }
+    });
+</script>
 </body>
 </html>
 <!--{$this->endPage()}-->

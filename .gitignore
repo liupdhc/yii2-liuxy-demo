@@ -31,5 +31,4 @@ phpunit.phar
 # local phpunit config
 /phpunit.xml
 
-runtime
 *.log

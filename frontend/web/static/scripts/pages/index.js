@@ -118,24 +118,7 @@ var Message = function() {
 var Index = function () {
     return {
         init: function () {
-            $('#btn-search').click(function() {
-                var key = $.trim($('#key').val());
-                if (key == '') {
-                    Message.error('您输入的编码为空！');
-                    return false;
-                }
-                Liuxy.ajax($(this), 'book/default/search.json', 'json', {key:key},
-                    function(data) {
-                        if (data.result) {
-                            Message.success(key+'存在于本防伪系统中，感谢您的查询！');
-                        } else {
-                            Message.error('对不起！您查询的编码在本防伪系统并不存在，谨防假冒！');
-                        }
-                    },
-                    function(no, msg) {
-                        Message.error('对不起！您查询的编码在本防伪系统并不存在，谨防假冒！');
-                    }, true);
-            });
-        },
+
+        }
     };
 }();

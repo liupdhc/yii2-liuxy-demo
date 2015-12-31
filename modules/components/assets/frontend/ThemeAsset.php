@@ -13,7 +13,8 @@ use liuxy\frontend\assets\AbstractAsset;
 
 class ThemeAsset extends AbstractAsset {
     protected $plugin_css = [
-        'css/theme.min.css'
+        'css/animate.css',
+        'css/theme.css'
     ];
 
     public function init()
